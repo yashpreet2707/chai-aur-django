@@ -1,11 +1,23 @@
-{% extends "layout.html" %}
-
-{% block title %}
-Chai Page
-{% endblock %}
-
+{% extends "layout.html" %} 
+{% block title %} Chai Page {% endblock %} 
 
 {% block content %}
 <h1 class="text-purple-600 bg-white">Chai aur code | Chai Page</h1>
-<p class="text-xl text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit accusamus est adipisci dolores voluptatibus iure porro vel voluptatem atque impedit.</p>
+<p class="text-xl text-center">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit accusamus est
+  adipisci dolores voluptatibus iure porro vel voluptatem atque impedit.
+</p>
+
+<div class="grid grid-cols-3">
+  {% for chai in chais %}
+  <div class="">
+    <img class="" src="{{chai.image.url}}" alt="" />
+    <h3>{{chai.name}}</h3>
+    <a href="{% url 'chai_detail' chai.id %}">
+      <button>{{chai.type}}</button>
+    </a>
+  </div>
+  {% endfor %}
+</div>
+
 {% endblock %}

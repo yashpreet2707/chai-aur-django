@@ -17,6 +17,7 @@
     --color-gray-50: oklch(98.5% 0.002 247.839);
     --color-black: #000;
     --color-white: #fff;
+    --spacing: 0.25rem;
     --text-xl: 1.25rem;
     --text-xl--line-height: calc(1.75 / 1.25);
     --text-3xl: 1.875rem;
@@ -220,8 +221,17 @@
   .flex {
     display: flex;
   }
+  .grid {
+    display: grid;
+  }
   .h-screen {
     height: 100vh;
+  }
+  .w-22 {
+    width: calc(var(--spacing) * 22);
+  }
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   .items-center {
     align-items: center;
